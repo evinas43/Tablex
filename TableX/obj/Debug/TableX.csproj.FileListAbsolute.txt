@@ -1,0 +1,17 @@
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\bin\Debug\TableX.exe.config
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\bin\Debug\TableX.exe
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\bin\Debug\TableX.pdb
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX.csproj.AssemblyReference.cache
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\MainWindow.g.cs
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\App.g.cs
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX_MarkupCompile.cache
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX_MarkupCompile.lref
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\MainWindow.baml
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX.g.resources
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX.Properties.Resources.resources
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX.csproj.GenerateResource.cache
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX.csproj.CoreCompileInputs.cache
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX.exe
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX.pdb
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX.exe.config
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX_Content.g.cs

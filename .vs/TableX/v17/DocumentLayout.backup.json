@@ -1,0 +1,76 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\tablex\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{ba58fdf3-7af7-4b60-b69b-40ac68d83b75}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "TableX\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\MainWindow.xaml",
+              "RelativeToolTip": "TableX\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-20T14:39:49.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "TableX\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\MainWindow.xaml.cs",
+              "RelativeToolTip": "TableX\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T14:39:47.516Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
