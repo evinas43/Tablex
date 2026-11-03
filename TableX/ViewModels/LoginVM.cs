@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Net.Http;
 using System.Security.Authentication;
 using System.Threading.Tasks;
@@ -20,6 +21,11 @@ namespace TableX.ViewModels
 
             LoginCommand = new RelayCommand(async _ => await Login());
 
+            // Teclado numérico del PIN
+            AddDigitCommand = new RelayCommand(p => AddDigit(p as string));
+            DeleteDigitCommand = new RelayCommand(_ => DeleteDigit());
+            ClearPinCommand = new RelayCommand(_ => ClearPin());
+
             // Botón gris "Iniciar Sesión" (debajo de "O inicia sesión")
             // TODO: cambia esto por lo que tenga que hacer ese botón
             AlternativeLoginCommand = new RelayCommand(_ =>
@@ -28,9 +34,49 @@ namespace TableX.ViewModels
 
         public RelayCommand LoginCommand { get; }
         public RelayCommand AlternativeLoginCommand { get; }
+        public RelayCommand AddDigitCommand { get; }
+        public RelayCommand DeleteDigitCommand { get; }
+        public RelayCommand ClearPinCommand { get; }
 
         public string? Username { get; set; }
-        public string? Pin { get; set; }
+
+        // ---------- PIN ----------
+
+        public const int PinLength = 4;
+
+        private string _pin = string.Empty;
+        public string Pin
+        {
+            get => _pin;
+            private set
+            {
+                _pin = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(PinDots));
+                OnPropertyChanged(nameof(PinCounter));
+            }
+        }
+
+        // Un bool por cada círculo: true = dígito escrito
+        public bool[] PinDots => Enumerable.Range(0, PinLength).Select(i => i < _pin.Length).ToArray();
+
+        // Texto "2/4" de la esquina
+        public string PinCounter => $"{_pin.Length}/{PinLength}";
+
+        // Públicos para que la vista los use también con el teclado físico
+        public void AddDigit(string? digit)
+        {
+            if (digit is { Length: 1 } && digit[0] >= '0' && digit[0] <= '9' && _pin.Length < PinLength)
+                Pin += digit;
+        }
+
+        public void DeleteDigit()
+        {
+            if (_pin.Length > 0)
+                Pin = _pin.Substring(0, _pin.Length - 1);
+        }
+
+        public void ClearPin() => Pin = string.Empty;
 
         private async Task Login()
         {
@@ -45,6 +91,12 @@ namespace TableX.ViewModels
                 return;
             }
 
+            if (Pin.Length != PinLength)
+            {
+                ToastService.Instance.Show($"El PIN debe tener {PinLength} dígitos", "warning");
+                return;
+            }
+
             try
             {
                 IsLoading = true;
@@ -54,6 +106,7 @@ namespace TableX.ViewModels
                 if (login == null || string.IsNullOrEmpty(login.Token))
                 {
                     ToastService.Instance.Show("Usuario o PIN incorrectos", "error");
+                    ClearPin(); // para volver a escribirlo desde cero
                     return;
                 }
 

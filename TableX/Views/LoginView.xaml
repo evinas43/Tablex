@@ -147,40 +147,35 @@
             </Setter>
         </Style>
 
-        <!-- ===================== PASSWORDBOX (el placeholder va encima, desde code-behind) ===================== -->
-        <Style x:Key="TxPasswordBox" TargetType="PasswordBox">
-            <Setter Property="Height" Value="42"/>
-            <Setter Property="FontSize" Value="14"/>
+        <!-- ===================== TECLADO PIN ===================== -->
+        <!-- Focusable=False: pulsar una tecla no quita el foco, así Enter sigue lanzando el login -->
+        <Style x:Key="TxKeyButton" TargetType="Button">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Foreground" Value="{StaticResource TxInk}"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="{StaticResource TxInputBorder}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Padding" Value="12,0"/>
-            <Setter Property="PasswordChar" Value="●"/>
-            <Setter Property="CaretBrush" Value="{StaticResource TxInk}"/>
-            <Setter Property="SelectionBrush" Value="{StaticResource TxOrange}"/>
-            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Background" Value="#FAF9F7"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TxLine}"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Focusable" Value="False"/>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="PasswordBox">
+                    <ControlTemplate TargetType="Button">
                         <Border x:Name="Bd"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="6">
-                            <ScrollViewer x:Name="PART_ContentHost"
-                                          Margin="{TemplateBinding Padding}"
-                                          VerticalAlignment="Center"
-                                          Focusable="False"
-                                          HorizontalScrollBarVisibility="Hidden"
-                                          VerticalScrollBarVisibility="Hidden"/>
+                                BorderThickness="1"
+                                CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource TxInputBorderHover}"/>
+                                <Setter TargetName="Bd" Property="Background" Value="#F0EFEB"/>
                             </Trigger>
-                            <Trigger Property="IsKeyboardFocused" Value="True">
-                                <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource TxOrange}"/>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#E6E5E0"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Opacity" Value="0.5"/>
@@ -189,6 +184,15 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+
+        <!-- Teclas "Borrar" y retroceso: sin fondo ni borde hasta pasar el ratón -->
+        <Style x:Key="TxKeyGhostButton" TargetType="Button" BasedOn="{StaticResource TxKeyButton}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{StaticResource TxText}"/>
         </Style>
 
         <!-- ===================== BOTONES ===================== -->
@@ -281,14 +285,18 @@
     <Grid>
 
         <!-- ===================== CONTENIDO CENTRADO ===================== -->
+        <!-- ScrollViewer: si la ventana es más baja que el formulario, se puede hacer scroll -->
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      Focusable="False">
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center"
+                    Margin="0,24"
                     Width="370">
 
             <!-- LOGO -->
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
-                        Margin="0,0,0,90">
+                        Margin="0,0,0,40">
 
                 <Image Source="{StaticResource TablexLogoMark}"
                        Height="64"
@@ -333,23 +341,70 @@
                              Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
                              Margin="0,20,0,0"/>
 
-                    <!-- PIN (solo números) -->
-                    <Grid Margin="0,12,0,0">
-                        <PasswordBox x:Name="PinBox"
-                                     Style="{StaticResource TxPasswordBox}"
-                                     PasswordChanged="PinBox_PasswordChanged"
-                                     PreviewTextInput="PinBox_PreviewTextInput"
-                                     PreviewKeyDown="PinBox_PreviewKeyDown"
-                                     DataObject.Pasting="PinBox_Pasting"/>
-
-                        <TextBlock x:Name="PinPlaceholder"
-                                   Text="Introduce tu PIN numérico"
-                                   FontSize="14"
+                    <!-- PIN: cabecera "PIN  0/4" -->
+                    <Grid Margin="0,18,0,0">
+                        <TextBlock Text="PIN"
+                                   FontSize="12"
+                                   FontWeight="SemiBold"
+                                   Foreground="{StaticResource TxInk}"/>
+                        <TextBlock Text="{Binding PinCounter}"
+                                   FontSize="12"
                                    Foreground="{StaticResource TxMuted}"
-                                   Margin="14,0,12,0"
-                                   VerticalAlignment="Center"
-                                   IsHitTestVisible="False"/>
+                                   HorizontalAlignment="Right"/>
                     </Grid>
+
+                    <!-- PIN: un círculo por dígito, se rellena al escribirlo -->
+                    <ItemsControl ItemsSource="{Binding PinDots}"
+                                  HorizontalAlignment="Center"
+                                  Focusable="False"
+                                  Margin="0,8,0,6">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Ellipse x:Name="Dot"
+                                         Width="12" Height="12"
+                                         Margin="5,0"
+                                         Stroke="{StaticResource TxMuted}"
+                                         StrokeThickness="1.5"
+                                         Fill="Transparent"/>
+                                <DataTemplate.Triggers>
+                                    <DataTrigger Binding="{Binding}" Value="True">
+                                        <Setter TargetName="Dot" Property="Fill" Value="{StaticResource TxInk}"/>
+                                        <Setter TargetName="Dot" Property="Stroke" Value="{StaticResource TxInk}"/>
+                                    </DataTrigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                    <!-- PIN: teclado (Margin negativo para que las teclas queden alineadas con el resto) -->
+                    <UniformGrid Columns="3" Margin="-4,0,-4,0">
+                        <Button Style="{StaticResource TxKeyButton}" Content="1" Command="{Binding AddDigitCommand}" CommandParameter="1"/>
+                        <Button Style="{StaticResource TxKeyButton}" Content="2" Command="{Binding AddDigitCommand}" CommandParameter="2"/>
+                        <Button Style="{StaticResource TxKeyButton}" Content="3" Command="{Binding AddDigitCommand}" CommandParameter="3"/>
+                        <Button Style="{StaticResource TxKeyButton}" Content="4" Command="{Binding AddDigitCommand}" CommandParameter="4"/>
+                        <Button Style="{StaticResource TxKeyButton}" Content="5" Command="{Binding AddDigitCommand}" CommandParameter="5"/>
+                        <Button Style="{StaticResource TxKeyButton}" Content="6" Command="{Binding AddDigitCommand}" CommandParameter="6"/>
+                        <Button Style="{StaticResource TxKeyButton}" Content="7" Command="{Binding AddDigitCommand}" CommandParameter="7"/>
+                        <Button Style="{StaticResource TxKeyButton}" Content="8" Command="{Binding AddDigitCommand}" CommandParameter="8"/>
+                        <Button Style="{StaticResource TxKeyButton}" Content="9" Command="{Binding AddDigitCommand}" CommandParameter="9"/>
+
+                        <Button Style="{StaticResource TxKeyGhostButton}" Content="Borrar" Command="{Binding ClearPinCommand}"/>
+                        <Button Style="{StaticResource TxKeyButton}" Content="0" Command="{Binding AddDigitCommand}" CommandParameter="0"/>
+                        <Button Style="{StaticResource TxKeyGhostButton}" Command="{Binding DeleteDigitCommand}" ToolTip="Borrar último dígito">
+                            <!-- Icono de retroceso -->
+                            <Path Data="M7,1 H19 A2,2 0 0 1 21,3 V13 A2,2 0 0 1 19,15 H7 L1,8 Z M10.5,5.5 L15.5,10.5 M15.5,5.5 L10.5,10.5"
+                                  Stroke="{StaticResource TxInk}"
+                                  StrokeThickness="1.6"
+                                  StrokeLineJoin="Round"
+                                  StrokeStartLineCap="Round"
+                                  StrokeEndLineCap="Round"/>
+                        </Button>
+                    </UniformGrid>
 
                     <!-- Botón principal (Enter lo activa) -->
                     <Button Content="Sign up"
@@ -413,6 +468,7 @@
                 </StackPanel>
             </Border>
         </StackPanel>
+        </ScrollViewer>
 
         <!-- ===================== LOADING ===================== -->
         <Grid Background="#B3E7E5E0"

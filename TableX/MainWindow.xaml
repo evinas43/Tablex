@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:TableX"
         mc:Ignorable="d"
          Background="#E7E5E0"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="900" Width="1100"
+        MinHeight="500" MinWidth="450"
+        WindowStartupLocation="CenterScreen"
         Icon="/Images/TablexIMG/tablex-icono-app.png"
         >
     <Grid>

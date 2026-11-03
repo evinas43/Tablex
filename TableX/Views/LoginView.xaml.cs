@@ -27,41 +27,30 @@ namespace TableX.Views
             Unloaded += (s, e) => ToastService.Instance.OnShowToast -= ShowToast;
         }
 
-        // ---------- PIN ----------
+        // ---------- PIN (teclado físico) ----------
 
-        // PasswordBox no admite Binding en Password, así que se pasa a mano al ViewModel
-        private void PinBox_PasswordChanged(object sender, RoutedEventArgs e)
+        // Además del teclado en pantalla, se puede escribir el PIN con el teclado.
+        // Si el foco está en el campo de usuario, las teclas van a ese campo (el usuario puede tener números).
+        protected override void OnPreviewKeyDown(KeyEventArgs e)
         {
-            PinPlaceholder.Visibility = PinBox.Password.Length == 0
-                ? Visibility.Visible
-                : Visibility.Collapsed;
+            base.OnPreviewKeyDown(e);
 
-            if (DataContext is LoginVM vm)
-                vm.Pin = PinBox.Password;
+            if (DataContext is not LoginVM vm || Keyboard.FocusedElement is TextBox)
+                return;
+
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 && Keyboard.Modifiers == ModifierKeys.None)
+                vm.AddDigit(((int)(e.Key - Key.D0)).ToString());
+            else if (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+                vm.AddDigit(((int)(e.Key - Key.NumPad0)).ToString());
+            else if (e.Key == Key.Back)
+                vm.DeleteDigit();
+            else if (e.Key == Key.Delete || e.Key == Key.Escape)
+                vm.ClearPin();
+            else
+                return;
+
+            e.Handled = true;
         }
-
-        // Solo deja escribir dígitos
-        private void PinBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            e.Handled = !IsNumeric(e.Text);
-        }
-
-        // El espacio no pasa por PreviewTextInput, se bloquea aquí
-        private void PinBox_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Space)
-                e.Handled = true;
-        }
-
-        // Evita pegar texto que no sea numérico
-        private void PinBox_Pasting(object sender, DataObjectPastingEventArgs e)
-        {
-            if (e.DataObject.GetData(typeof(string)) is not string text || !IsNumeric(text))
-                e.CancelCommand();
-        }
-
-        private static bool IsNumeric(string text) =>
-            text.Length > 0 && text.All(c => c >= '0' && c <= '9');
 
         // ---------- TOAST ----------
 
