@@ -1,0 +1,504 @@
+﻿<UserControl x:Class="TableX.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#E7E5E0"
+             FontFamily="Inter, Segoe UI"
+             UseLayoutRounding="True">
+
+    <UserControl.Resources>
+
+        <!-- ===================== CONVERTERS ===================== -->
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+
+        <!-- ===================== PALETA ===================== -->
+        <SolidColorBrush x:Key="TxOrange"           Color="#FF5A26"/>
+        <SolidColorBrush x:Key="TxInk"              Color="#0A0A0A"/>
+        <SolidColorBrush x:Key="TxText"             Color="#3F3F46"/>
+        <SolidColorBrush x:Key="TxMuted"            Color="#8A8A8F"/>
+        <SolidColorBrush x:Key="TxCard"             Color="#F3F2EE"/>
+        <SolidColorBrush x:Key="TxLine"             Color="#E2E1DC"/>
+        <SolidColorBrush x:Key="TxInputBorder"      Color="#E4E4E7"/>
+        <SolidColorBrush x:Key="TxInputBorderHover" Color="#D4D4D8"/>
+
+        <!-- ===================== ICONOS (vectoriales) ===================== -->
+
+        <!-- Marca del logo: barra negra + X naranja -->
+        <DrawingImage x:Key="TablexLogoMark">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="#1C1C1C">
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry Rect="0,0,50,7" RadiusX="3.5" RadiusY="3.5"/>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF5A26" Thickness="7"
+                                 StartLineCap="Round" EndLineCap="Round"/>
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <GeometryGroup>
+                                <LineGeometry StartPoint="12,15" EndPoint="38,43"/>
+                                <LineGeometry StartPoint="38,15" EndPoint="12,43"/>
+                            </GeometryGroup>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <!-- Icono de app: cuadrado oscuro + barra clara + X naranja -->
+        <DrawingImage x:Key="TablexAppIcon">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="#1C1C1C">
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry Rect="0,0,48,48" RadiusX="10" RadiusY="10"/>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#F3F2EE">
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry Rect="11,10,26,4" RadiusX="2" RadiusY="2"/>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF5A26" Thickness="5"
+                                 StartLineCap="Round" EndLineCap="Round"/>
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <GeometryGroup>
+                                <LineGeometry StartPoint="16,20" EndPoint="32,38"/>
+                                <LineGeometry StartPoint="32,20" EndPoint="16,38"/>
+                            </GeometryGroup>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <!-- ===================== FOCO (solo navegación con teclado) ===================== -->
+        <Style x:Key="TxFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="-3" RadiusX="8" RadiusY="8"
+                                   Stroke="#FF5A26" StrokeThickness="2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- ===================== TEXTBOX con placeholder (usa Tag) ===================== -->
+        <Style x:Key="TxTextBox" TargetType="TextBox">
+            <Setter Property="Height" Value="42"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="{StaticResource TxInk}"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TxInputBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="12,0"/>
+            <Setter Property="CaretBrush" Value="{StaticResource TxInk}"/>
+            <Setter Property="SelectionBrush" Value="{StaticResource TxOrange}"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              Margin="{TemplateBinding Padding}"
+                                              VerticalAlignment="Center"
+                                              Focusable="False"
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Hidden"/>
+                                <TextBlock x:Name="Placeholder"
+                                           Text="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}"
+                                           Foreground="{StaticResource TxMuted}"
+                                           Margin="14,0,12,0"
+                                           VerticalAlignment="Center"
+                                           IsHitTestVisible="False"
+                                           Visibility="Collapsed"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Text" Value="">
+                                <Setter TargetName="Placeholder" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter TargetName="Placeholder" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource TxInputBorderHover}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource TxOrange}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- ===================== PASSWORDBOX (el placeholder va encima, desde code-behind) ===================== -->
+        <Style x:Key="TxPasswordBox" TargetType="PasswordBox">
+            <Setter Property="Height" Value="42"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="{StaticResource TxInk}"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TxInputBorder}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="12,0"/>
+            <Setter Property="PasswordChar" Value="●"/>
+            <Setter Property="CaretBrush" Value="{StaticResource TxInk}"/>
+            <Setter Property="SelectionBrush" Value="{StaticResource TxOrange}"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="Center"
+                                          Focusable="False"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource TxInputBorderHover}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource TxOrange}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- ===================== BOTONES ===================== -->
+        <Style x:Key="TxButtonBase" TargetType="Button">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="13.5"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource TxFocusVisual}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.5"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Negro (acción principal) -->
+        <Style x:Key="TxPrimaryButton" TargetType="Button" BasedOn="{StaticResource TxButtonBase}">
+            <Setter Property="Background" Value="#0A0A0A"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#2A2A2E"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#3F3F46"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Gris claro (acción secundaria) -->
+        <Style x:Key="TxSecondaryButton" TargetType="Button" BasedOn="{StaticResource TxButtonBase}">
+            <Setter Property="Background" Value="#EAE9E5"/>
+            <Setter Property="Foreground" Value="{StaticResource TxInk}"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#E0DFDA"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#D6D5CF"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Enlaces del pie (Terms / Privacy) -->
+        <Style x:Key="TxLink" TargetType="Hyperlink">
+            <Setter Property="Foreground" Value="{StaticResource TxInk}"/>
+            <Setter Property="TextDecorations" Value="{x:Null}"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="TextDecorations" Value="Underline"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- ===================== TOAST ===================== -->
+        <Storyboard x:Key="ShowToast">
+            <DoubleAnimation Storyboard.TargetName="Toast"
+                             Storyboard.TargetProperty="Opacity"
+                             From="0" To="1"
+                             Duration="0:0:0.3"/>
+            <DoubleAnimation Storyboard.TargetName="Toast"
+                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)"
+                             From="-20" To="0"
+                             Duration="0:0:0.3"/>
+        </Storyboard>
+
+        <Storyboard x:Key="HideToast">
+            <DoubleAnimation Storyboard.TargetName="Toast"
+                             Storyboard.TargetProperty="Opacity"
+                             To="0"
+                             Duration="0:0:0.3"/>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid>
+
+        <!-- ===================== CONTENIDO CENTRADO ===================== -->
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="370">
+
+            <!-- LOGO -->
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0,0,0,90">
+
+                <Image Source="{StaticResource TablexLogoMark}"
+                       Height="64"
+                       VerticalAlignment="Center"/>
+
+                <TextBlock FontFamily="Nunito, Segoe UI"
+                           FontSize="52"
+                           FontWeight="Bold"
+                           Foreground="#1C1C1C"
+                           VerticalAlignment="Center"
+                           Margin="16,0,0,6">
+                    <Run Text="table"/><Run Text="x" Foreground="{StaticResource TxOrange}"/>
+                </TextBlock>
+            </StackPanel>
+
+            <!-- CARD -->
+            <Border Background="{StaticResource TxCard}"
+                    CornerRadius="12"
+                    Padding="20,24,20,22">
+
+                <StackPanel>
+
+                    <!-- Título -->
+                    <TextBlock Text="Iniciar Sesión"
+                               FontSize="22"
+                               FontWeight="SemiBold"
+                               Foreground="{StaticResource TxInk}"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="Introduce tu rol y credenciales para poder acceder a las funciones"
+                               FontSize="13.5"
+                               Foreground="{StaticResource TxText}"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               MaxWidth="270"
+                               HorizontalAlignment="Center"
+                               Margin="0,6,0,0"/>
+
+                    <!-- Usuario -->
+                    <TextBox Style="{StaticResource TxTextBox}"
+                             Tag="Nombre de usuario..."
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                             Margin="0,20,0,0"/>
+
+                    <!-- PIN (solo números) -->
+                    <Grid Margin="0,12,0,0">
+                        <PasswordBox x:Name="PinBox"
+                                     Style="{StaticResource TxPasswordBox}"
+                                     PasswordChanged="PinBox_PasswordChanged"
+                                     PreviewTextInput="PinBox_PreviewTextInput"
+                                     PreviewKeyDown="PinBox_PreviewKeyDown"
+                                     DataObject.Pasting="PinBox_Pasting"/>
+
+                        <TextBlock x:Name="PinPlaceholder"
+                                   Text="Introduce tu PIN numérico"
+                                   FontSize="14"
+                                   Foreground="{StaticResource TxMuted}"
+                                   Margin="14,0,12,0"
+                                   VerticalAlignment="Center"
+                                   IsHitTestVisible="False"/>
+                    </Grid>
+
+                    <!-- Botón principal (Enter lo activa) -->
+                    <Button Content="Sign up"
+                            Style="{StaticResource TxPrimaryButton}"
+                            Margin="0,14,0,0"
+                            IsDefault="True"
+                            Command="{Binding LoginCommand}"/>
+
+                    <!-- Separador "O inicia sesión" -->
+                    <Grid Margin="0,22,0,18">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" Height="1"
+                                Background="{StaticResource TxLine}"
+                                VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                                   Text="O inicia sesión"
+                                   FontSize="12.5"
+                                   Foreground="{StaticResource TxMuted}"
+                                   Margin="12,0"/>
+
+                        <Border Grid.Column="2" Height="1"
+                                Background="{StaticResource TxLine}"
+                                VerticalAlignment="Center"/>
+                    </Grid>
+
+                    <!-- Botón secundario con icono -->
+                    <Button Style="{StaticResource TxSecondaryButton}"
+                            Command="{Binding AlternativeLoginCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource TablexAppIcon}"
+                                   Width="24" Height="24"
+                                   VerticalAlignment="Center"/>
+                            <TextBlock Text="Iniciar Sesión"
+                                       VerticalAlignment="Center"
+                                       Margin="12,0,0,0"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!-- Pie legal -->
+                    <TextBlock FontSize="12"
+                               Foreground="{StaticResource TxMuted}"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               LineHeight="20"
+                               MaxWidth="290"
+                               HorizontalAlignment="Center"
+                               Margin="0,22,0,0">
+                        <!-- Los saltos de línea entre elementos ya cuentan como un espacio -->
+                        <Run Text="By clicking continue, you agree to our"/>
+                        <Hyperlink Style="{StaticResource TxLink}">Terms of Service</Hyperlink>
+                        <Run Text="and"/>
+                        <Hyperlink Style="{StaticResource TxLink}">Privacy Policy</Hyperlink>
+                    </TextBlock>
+
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <!-- ===================== LOADING ===================== -->
+        <Grid Background="#B3E7E5E0"
+              Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}">
+
+            <Grid Width="96" Height="96"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+
+                <!-- Pista -->
+                <Ellipse Stroke="#D9D7D1" StrokeThickness="4"/>
+
+                <!-- Arco que gira -->
+                <Ellipse Stroke="{StaticResource TxOrange}"
+                         StrokeThickness="4"
+                         StrokeDashArray="18 100"
+                         StrokeDashCap="Round"
+                         RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <RotateTransform/>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard RepeatBehavior="Forever">
+                                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                                                     From="0" To="360"
+                                                     Duration="0:0:1"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Ellipse.Triggers>
+                </Ellipse>
+
+                <Image Source="{StaticResource TablexLogoMark}"
+                       Width="40"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+
+        <!-- ===================== TOAST ===================== -->
+        <Border x:Name="Toast"
+                Background="White"
+                BorderBrush="{StaticResource TxInputBorder}"
+                BorderThickness="1"
+                CornerRadius="10"
+                Padding="14,12"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0,20,20,0"
+                Opacity="0"
+                IsHitTestVisible="False">
+
+            <Border.RenderTransform>
+                <TranslateTransform Y="-20"/>
+            </Border.RenderTransform>
+
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="16"
+                                  ShadowDepth="2"
+                                  Direction="270"
+                                  Opacity="0.12"/>
+            </Border.Effect>
+
+            <StackPanel Orientation="Horizontal">
+                <Border x:Name="ToastBadge"
+                        Width="22" Height="22"
+                        CornerRadius="11"
+                        Background="{StaticResource TxOrange}"
+                        Margin="0,0,10,0">
+                    <TextBlock x:Name="ToastIcon"
+                               Text="!"
+                               FontSize="13"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
+
+                <TextBlock x:Name="ToastText"
+                           FontSize="13"
+                           FontWeight="SemiBold"
+                           Foreground="{StaticResource TxInk}"
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

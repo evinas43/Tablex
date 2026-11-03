@@ -15,3 +15,5 @@ C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX.exe
 C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX.pdb
 C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX.exe.config
 C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\TableX_Content.g.cs
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\Views\LoginView.baml
+C:\Users\faeer\OneDrive\Escritorio\Tablex_WPF\TableX\TableX\obj\Debug\Views\LoginView.g.cs

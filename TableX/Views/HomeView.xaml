@@ -1,0 +1,15 @@
+<UserControl x:Class="TableX.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#E7E5E0"
+             FontFamily="Inter, Segoe UI">
+    <!-- Pantalla provisional: solo para comprobar que el login navega bien -->
+    <Grid>
+        <TextBlock Text="Home"
+                   FontSize="28"
+                   FontWeight="SemiBold"
+                   Foreground="#0A0A0A"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+    </Grid>
+</UserControl>

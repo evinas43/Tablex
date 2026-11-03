@@ -1,0 +1,29 @@
+# ===== Visual Studio =====
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ===== Compilación =====
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+*_wpftmp.csproj
+
+# ===== NuGet =====
+packages/
+*.nupkg
+
+# ===== Rider / VS Code =====
+.idea/
+.vscode/
+
+# ===== Varios =====
+*.log
+*.tmp
+Thumbs.db
+Desktop.ini
