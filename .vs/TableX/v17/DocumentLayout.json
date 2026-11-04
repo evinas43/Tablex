@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\services\\httpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\services\\httpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\views\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\views\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\services\\httpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\services\\httpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 21,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -206,13 +206,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "HttpService.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Services\\HttpService.cs",
               "RelativeDocumentMoniker": "TableX\\Services\\HttpService.cs",
               "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Services\\HttpService.cs",
               "RelativeToolTip": "TableX\\Services\\HttpService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-03T15:39:36.906Z",
               "EditorCaption": ""
@@ -279,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "LoginView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\LoginView.xaml.cs",
               "RelativeDocumentMoniker": "TableX\\Views\\LoginView.xaml.cs",
@@ -287,12 +287,11 @@
               "RelativeToolTip": "TableX\\Views\\LoginView.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T14:51:08.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T14:51:08.692Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "LoginView.xaml",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\LoginView.xaml",
               "RelativeDocumentMoniker": "TableX\\Views\\LoginView.xaml",
