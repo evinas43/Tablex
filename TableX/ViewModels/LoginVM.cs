@@ -25,15 +25,9 @@ namespace TableX.ViewModels
             AddDigitCommand = new RelayCommand(p => AddDigit(p as string));
             DeleteDigitCommand = new RelayCommand(_ => DeleteDigit());
             ClearPinCommand = new RelayCommand(_ => ClearPin());
-
-            // Botón gris "Iniciar Sesión" (debajo de "O inicia sesión")
-            // TODO: cambia esto por lo que tenga que hacer ese botón
-            AlternativeLoginCommand = new RelayCommand(_ =>
-                ToastService.Instance.Show("Próximamente", "info"));
         }
 
         public RelayCommand LoginCommand { get; }
-        public RelayCommand AlternativeLoginCommand { get; }
         public RelayCommand AddDigitCommand { get; }
         public RelayCommand DeleteDigitCommand { get; }
         public RelayCommand ClearPinCommand { get; }

@@ -236,20 +236,6 @@
             </Style.Triggers>
         </Style>
 
-        <!-- Gris claro (acción secundaria) -->
-        <Style x:Key="TxSecondaryButton" TargetType="Button" BasedOn="{StaticResource TxButtonBase}">
-            <Setter Property="Background" Value="#EAE9E5"/>
-            <Setter Property="Foreground" Value="{StaticResource TxInk}"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#E0DFDA"/>
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="#D6D5CF"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
         <!-- Enlaces del pie (Terms / Privacy) -->
         <Style x:Key="TxLink" TargetType="Hyperlink">
             <Setter Property="Foreground" Value="{StaticResource TxInk}"/>
@@ -407,38 +393,10 @@
                     </UniformGrid>
 
                     <!-- Botón principal (Enter lo activa) -->
-                    <Button Content="Sign up"
-                            Style="{StaticResource TxPrimaryButton}"
+                    <Button Style="{StaticResource TxPrimaryButton}"
                             Margin="0,14,0,0"
                             IsDefault="True"
-                            Command="{Binding LoginCommand}"/>
-
-                    <!-- Separador "O inicia sesión" -->
-                    <Grid Margin="0,22,0,18">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Border Grid.Column="0" Height="1"
-                                Background="{StaticResource TxLine}"
-                                VerticalAlignment="Center"/>
-
-                        <TextBlock Grid.Column="1"
-                                   Text="O inicia sesión"
-                                   FontSize="12.5"
-                                   Foreground="{StaticResource TxMuted}"
-                                   Margin="12,0"/>
-
-                        <Border Grid.Column="2" Height="1"
-                                Background="{StaticResource TxLine}"
-                                VerticalAlignment="Center"/>
-                    </Grid>
-
-                    <!-- Botón secundario con icono -->
-                    <Button Style="{StaticResource TxSecondaryButton}"
-                            Command="{Binding AlternativeLoginCommand}">
+                            Command="{Binding LoginCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="{StaticResource TablexAppIcon}"
                                    Width="24" Height="24"
