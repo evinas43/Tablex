@@ -119,7 +119,7 @@ namespace TableX.ViewModels
 
                 // Navegar al home
                 // (si quieres separar Caja y Camarero, aquí puedes decidir según SessionUser.Role)
-                _navigation.CurrentView = new HomeVM(_navigation);
+                _navigation.CurrentView = new ShellVM(_navigation);
             }
             catch (HttpRequestException ex) when (ex.StatusCode != null)
             {

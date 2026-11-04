@@ -82,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -105,6 +105,10 @@
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "NavigationVM.cs",
@@ -114,8 +118,7 @@
               "RelativeToolTip": "TableX\\ViewModels\\NavigationVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:54:33.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:54:33.566Z"
             },
             {
               "$type": "Document",
@@ -127,8 +130,7 @@
               "RelativeToolTip": "TableX\\ViewModels\\HomeVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:53:58.296Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:53:58.296Z"
             },
             {
               "$type": "Document",
@@ -140,8 +142,7 @@
               "RelativeToolTip": "TableX\\App.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:53:33.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:53:33.335Z"
             },
             {
               "$type": "Document",
@@ -152,8 +153,7 @@
               "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\App.xaml",
               "RelativeToolTip": "TableX\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-11-03T15:51:26.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:51:26.346Z"
             },
             {
               "$type": "Document",
@@ -165,8 +165,7 @@
               "RelativeToolTip": "TableX\\App.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-11-03T15:51:23.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:51:23.029Z"
             },
             {
               "$type": "Document",
@@ -178,8 +177,7 @@
               "RelativeToolTip": "TableX\\Utilities\\ViewModelBase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:41:00.973Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:41:00.973Z"
             },
             {
               "$type": "Document",
@@ -191,8 +189,7 @@
               "RelativeToolTip": "TableX\\Utilities\\RelayCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:40:42.693Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:40:42.693Z"
             },
             {
               "$type": "Document",
@@ -204,8 +201,7 @@
               "RelativeToolTip": "TableX\\Services\\UserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:39:58.583Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:39:58.583Z"
             },
             {
               "$type": "Document",
@@ -230,8 +226,7 @@
               "RelativeToolTip": "TableX\\Services\\AuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:37:07.12Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:37:07.12Z"
             },
             {
               "$type": "Document",
@@ -243,8 +238,7 @@
               "RelativeToolTip": "TableX\\Models\\LoginResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:33:00.408Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:33:00.408Z"
             },
             {
               "$type": "Document",
@@ -256,8 +250,7 @@
               "RelativeToolTip": "TableX\\Models\\SessionUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:32:39.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:32:39.704Z"
             },
             {
               "$type": "Document",
@@ -269,8 +262,7 @@
               "RelativeToolTip": "TableX\\Models\\UserInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:31:49.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T15:31:49.107Z"
             },
             {
               "$type": "Document",
@@ -282,8 +274,7 @@
               "RelativeToolTip": "TableX\\ViewModels\\LoginVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T14:56:23.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T14:56:23.134Z"
             },
             {
               "$type": "Document",
@@ -295,8 +286,7 @@
               "RelativeToolTip": "TableX\\Views\\LoginView.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T14:51:08.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T14:51:08.692Z"
             },
             {
               "$type": "Document",
@@ -307,8 +297,7 @@
               "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\LoginView.xaml",
               "RelativeToolTip": "TableX\\Views\\LoginView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-11-03T14:40:53.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T14:40:53.448Z"
             },
             {
               "$type": "Document",
@@ -319,8 +308,7 @@
               "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\MainWindow.xaml",
               "RelativeToolTip": "TableX\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-10-20T14:39:49.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T14:39:49.557Z"
             },
             {
               "$type": "Document",
@@ -332,8 +320,7 @@
               "RelativeToolTip": "TableX\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T14:39:47.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T14:39:47.516Z"
             }
           ]
         }
