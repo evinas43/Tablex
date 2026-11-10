@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Collections.Generic;
+using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using TableX.Models;
@@ -24,6 +25,17 @@ namespace TableX.Services
                 return null;
 
             return await response.Content.ReadFromJsonAsync<UserInfo>();
+        }
+
+        // GET api/users/all -> todos los usuarios (necesita el token).
+        // Si la API responde con error (401, 404, 500...) lanza HttpRequestException con su StatusCode.
+        public async Task<List<UserInfo>> GetAllAsync()
+        {
+            var response = await _client.GetAsync("api/users/all");
+
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadFromJsonAsync<List<UserInfo>>() ?? new List<UserInfo>();
         }
     }
 }

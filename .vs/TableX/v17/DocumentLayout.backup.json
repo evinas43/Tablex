@@ -3,8 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\views\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\services\\httpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\services\\httpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\views\\userlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\views\\userlistview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\viewmodels\\userlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\viewmodels\\userlistvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\viewmodels\\shellvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\viewmodels\\shellvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\viewmodels\\navitemvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\viewmodels\\navitemvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\viewmodels\\navigationvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\viewmodels\\navigationvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\views\\shellview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\views\\shellview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\utilities\\navicons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\utilities\\navicons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\views\\navbar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\views\\navbar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\views\\navbar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\views\\navbar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -17,18 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\viewmodels\\navigationvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\viewmodels\\navigationvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -69,10 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\models\\userinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\models\\userinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|c:\\users\\faeer\\onedrive\\escritorio\\tablex_wpf\\tablex\\tablex\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0466A1CB-1FA8-473F-B5FF-41ECAC30AF79}|TableX\\TableX.csproj|solutionrelative:tablex\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,7 +118,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,7 +146,120 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeView.xaml",
+              "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\HomeView.xaml",
+              "RelativeDocumentMoniker": "TableX\\Views\\HomeView.xaml",
+              "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\HomeView.xaml",
+              "RelativeToolTip": "TableX\\Views\\HomeView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-10T15:31:53.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserListView.xaml",
+              "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\UserListView.xaml",
+              "RelativeDocumentMoniker": "TableX\\Views\\UserListView.xaml",
+              "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\UserListView.xaml",
+              "RelativeToolTip": "TableX\\Views\\UserListView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-10T15:11:46.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "UserListVM.cs",
+              "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\ViewModels\\UserListVM.cs",
+              "RelativeDocumentMoniker": "TableX\\ViewModels\\UserListVM.cs",
+              "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\ViewModels\\UserListVM.cs",
+              "RelativeToolTip": "TableX\\ViewModels\\UserListVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T15:09:54.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NavIcons.cs",
+              "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Utilities\\NavIcons.cs",
+              "RelativeDocumentMoniker": "TableX\\Utilities\\NavIcons.cs",
+              "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Utilities\\NavIcons.cs",
+              "RelativeToolTip": "TableX\\Utilities\\NavIcons.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwBEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T14:58:54.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShellVM.cs",
+              "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\ViewModels\\ShellVM.cs",
+              "RelativeDocumentMoniker": "TableX\\ViewModels\\ShellVM.cs",
+              "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\ViewModels\\ShellVM.cs",
+              "RelativeToolTip": "TableX\\ViewModels\\ShellVM.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAwBUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T14:57:25.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NavItemVM.cs",
+              "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\ViewModels\\NavItemVM.cs",
+              "RelativeDocumentMoniker": "TableX\\ViewModels\\NavItemVM.cs",
+              "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\ViewModels\\NavItemVM.cs",
+              "RelativeToolTip": "TableX\\ViewModels\\NavItemVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T14:34:59.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NavBar.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\NavBar.xaml.cs",
+              "RelativeDocumentMoniker": "TableX\\Views\\NavBar.xaml.cs",
+              "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\NavBar.xaml.cs",
+              "RelativeToolTip": "TableX\\Views\\NavBar.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-10T14:34:54.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NavBar.xaml",
+              "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\NavBar.xaml",
+              "RelativeDocumentMoniker": "TableX\\Views\\NavBar.xaml",
+              "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\NavBar.xaml",
+              "RelativeToolTip": "TableX\\Views\\NavBar.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-10T14:34:28.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ShellView.xaml",
+              "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\ShellView.xaml",
+              "RelativeDocumentMoniker": "TableX\\Views\\ShellView.xaml",
+              "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\ShellView.xaml",
+              "RelativeToolTip": "TableX\\Views\\ShellView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-10T14:34:24.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "NavigationVM.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\ViewModels\\NavigationVM.cs",
               "RelativeDocumentMoniker": "TableX\\ViewModels\\NavigationVM.cs",
@@ -118,23 +267,25 @@
               "RelativeToolTip": "TableX\\ViewModels\\NavigationVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:54:33.566Z"
+              "WhenOpened": "2026-11-03T15:54:33.566Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "HomeVM.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\ViewModels\\HomeVM.cs",
               "RelativeDocumentMoniker": "TableX\\ViewModels\\HomeVM.cs",
               "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\ViewModels\\HomeVM.cs",
               "RelativeToolTip": "TableX\\ViewModels\\HomeVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T15:53:58.296Z"
+              "WhenOpened": "2026-11-03T15:53:58.296Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\App.xaml.cs",
               "RelativeDocumentMoniker": "TableX\\App.xaml.cs",
@@ -146,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\App.xaml",
               "RelativeDocumentMoniker": "TableX\\App.xaml",
@@ -158,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\App.config",
               "RelativeDocumentMoniker": "TableX\\App.config",
@@ -170,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "ViewModelBase.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Utilities\\ViewModelBase.cs",
               "RelativeDocumentMoniker": "TableX\\Utilities\\ViewModelBase.cs",
@@ -182,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "RelayCommand.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Utilities\\RelayCommand.cs",
               "RelativeDocumentMoniker": "TableX\\Utilities\\RelayCommand.cs",
@@ -194,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "TableX\\Services\\UserService.cs",
@@ -206,20 +357,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "HttpService.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Services\\HttpService.cs",
               "RelativeDocumentMoniker": "TableX\\Services\\HttpService.cs",
               "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Services\\HttpService.cs",
               "RelativeToolTip": "TableX\\Services\\HttpService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-03T15:39:36.906Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "TableX\\Services\\AuthService.cs",
@@ -231,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 24,
               "Title": "LoginResponse.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Models\\LoginResponse.cs",
               "RelativeDocumentMoniker": "TableX\\Models\\LoginResponse.cs",
@@ -243,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "SessionUser.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Models\\SessionUser.cs",
               "RelativeDocumentMoniker": "TableX\\Models\\SessionUser.cs",
@@ -255,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 26,
               "Title": "UserInfo.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Models\\UserInfo.cs",
               "RelativeDocumentMoniker": "TableX\\Models\\UserInfo.cs",
@@ -267,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 8,
               "Title": "LoginVM.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\ViewModels\\LoginVM.cs",
               "RelativeDocumentMoniker": "TableX\\ViewModels\\LoginVM.cs",
@@ -275,11 +426,12 @@
               "RelativeToolTip": "TableX\\ViewModels\\LoginVM.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-03T14:56:23.134Z"
+              "WhenOpened": "2026-11-03T14:56:23.134Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 15,
               "Title": "LoginView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\LoginView.xaml.cs",
               "RelativeDocumentMoniker": "TableX\\Views\\LoginView.xaml.cs",
@@ -291,19 +443,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
               "Title": "LoginView.xaml",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\LoginView.xaml",
               "RelativeDocumentMoniker": "TableX\\Views\\LoginView.xaml",
               "ToolTip": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\Views\\LoginView.xaml",
               "RelativeToolTip": "TableX\\Views\\LoginView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-11-03T14:40:53.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-03T14:40:53.448Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 19,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\MainWindow.xaml",
               "RelativeDocumentMoniker": "TableX\\MainWindow.xaml",
@@ -314,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\faeer\\OneDrive\\Escritorio\\Tablex_WPF\\TableX\\TableX\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "TableX\\MainWindow.xaml.cs",

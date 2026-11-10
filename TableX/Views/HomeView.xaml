@@ -2,14 +2,76 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Background="#E7E5E0"
-             FontFamily="Inter, Segoe UI">
-    <!-- Pantalla provisional: solo para comprobar que el login navega bien -->
-    <Grid>
-        <TextBlock Text="Home"
-                   FontSize="28"
-                   FontWeight="SemiBold"
-                   Foreground="#0A0A0A"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
+             FontFamily="Inter, Segoe UI"
+             UseLayoutRounding="True">
+
+    <!-- Su DataContext es un HomeVM -->
+    <UserControl.Resources>
+        <!-- Colores de la app (TxInk, TxOrange, TxCard...) y estilo de iconos -->
+        <ResourceDictionary Source="/Styles/NavBarStyles.xaml"/>
+    </UserControl.Resources>
+
+    <Grid Margin="32">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Bienvenida -->
+            <RowDefinition Height="*"/>    <!-- Contenido futuro de Inicio -->
+        </Grid.RowDefinitions>
+
+        <!-- ========== Tarjeta de bienvenida (arriba, centrada) ========== -->
+        <Border Grid.Row="0"
+                HorizontalAlignment="Center"
+                Background="{StaticResource TxCard}"
+                BorderBrush="{StaticResource TxLine}"
+                BorderThickness="1"
+                CornerRadius="16"
+                Padding="28,22">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="24" ShadowDepth="4" Direction="270"
+                                  Color="#000000" Opacity="0.06"/>
+            </Border.Effect>
+
+            <StackPanel Orientation="Horizontal">
+
+                <!-- Icono: sol de día, luna de noche, sobre un círculo naranja suave -->
+                <Border Width="56" Height="56"
+                        CornerRadius="28"
+                        Background="#FFE6DC"
+                        VerticalAlignment="Center"
+                        Margin="0,0,20,0">
+                    <Viewbox Width="26" Height="26">
+                        <Canvas Width="24" Height="24">
+                            <Path Data="{Binding GreetingIcon}"
+                                  Stroke="{StaticResource TxOrange}"
+                                  Style="{StaticResource TxIconPath}"/>
+                        </Canvas>
+                    </Viewbox>
+                </Border>
+
+                <!-- Textos -->
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Greeting}"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               Foreground="{StaticResource TxInk}"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                        <TextBlock Text="{Binding TodayText}"
+                                   FontSize="14"
+                                   Foreground="{StaticResource TxMuted}"/>
+                        <TextBlock Text="  ·  "
+                                   FontSize="14"
+                                   Foreground="{StaticResource TxMuted}"/>
+                        <TextBlock Text="Que tengas un buen turno"
+                                   FontSize="14"
+                                   Foreground="{StaticResource TxMuted}"/>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+
+        <!-- ========== Resto de la pantalla de Inicio (de momento vacío) ========== -->
+        <Grid Grid.Row="1" Margin="0,32,0,0">
+        </Grid>
     </Grid>
 </UserControl>
