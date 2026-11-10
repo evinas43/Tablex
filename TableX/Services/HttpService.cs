@@ -8,7 +8,7 @@ namespace TableX.Services
     {
         // URL de TablexAPI (perfil "https" de Properties/launchSettings.json de la API).
         // Tiene que acabar en "/" y las rutas de los servicios NO deben empezar por "/".
-        private const string BaseUrl = "http://TableX.somee.com/publish/";
+        private const string BaseUrl = "https://TableX.somee.com/publish/";
 
 
         private static HttpClient? _client;
