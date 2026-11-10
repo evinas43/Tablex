@@ -19,6 +19,7 @@ namespace TableX.ViewModels
             NavItems = new List<NavItemVM>
             {
                 new NavItemVM("Inicio", NavIcons.Home, () => new HomeVM(_navigation)),
+                new NavItemVM("Usuarios", NavIcons.Users, () => new UserListVM(_navigation)),
             };
 
             LogoutCommand = new RelayCommand(_ => Logout());

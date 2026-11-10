@@ -20,5 +20,9 @@
             <views:HomeView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type vm:UserListVM}">
+            <views:UserListView/>
+        </DataTemplate>
+
     </Application.Resources>
 </Application>
