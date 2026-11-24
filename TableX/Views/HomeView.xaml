@@ -1,20 +1,71 @@
 <UserControl x:Class="TableX.Views.HomeView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:TableX.Controls"
              Background="#E7E5E0"
              FontFamily="Inter, Segoe UI"
              UseLayoutRounding="True">
 
     <!-- Su DataContext es un HomeVM -->
     <UserControl.Resources>
-        <!-- Colores de la app (TxInk, TxOrange, TxCard...) y estilo de iconos -->
-        <ResourceDictionary Source="/Styles/NavBarStyles.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Colores de la app (TxInk, TxOrange, TxCard...) y estilo de iconos -->
+                <ResourceDictionary Source="/Styles/NavBarStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Una mesa clicable: sin fondo ni borde, solo su contenido. Al pasar el ratón crece un poco -->
+            <Style x:Key="TxMesaButton" TargetType="Button">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Margin" Value="10"/> <!-- separación mínima entre mesas -->
+                <Setter Property="FocusVisualStyle" Value="{StaticResource TxFocusVisual}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <ContentPresenter x:Name="Content" RenderTransformOrigin="0.5,0.5">
+                                <ContentPresenter.RenderTransform>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                </ContentPresenter.RenderTransform>
+                            </ContentPresenter>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="Content"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                                                 To="1.06" Duration="0:0:0.12"/>
+                                                <DoubleAnimation Storyboard.TargetName="Content"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                                                 To="1.06" Duration="0:0:0.12"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.EnterActions>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="Content"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                                                 To="1" Duration="0:0:0.12"/>
+                                                <DoubleAnimation Storyboard.TargetName="Content"
+                                                                 Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                                                 To="1" Duration="0:0:0.12"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </Trigger.ExitActions>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
     </UserControl.Resources>
 
     <Grid Margin="32">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/> <!-- Bienvenida -->
-            <RowDefinition Height="*"/>    <!-- Contenido futuro de Inicio -->
+            <RowDefinition Height="*"/>    <!-- Mesas -->
         </Grid.RowDefinitions>
 
         <!-- ========== Tarjeta de bienvenida (arriba, centrada) ========== -->
@@ -70,8 +121,60 @@
             </StackPanel>
         </Border>
 
-        <!-- ========== Resto de la pantalla de Inicio (de momento vacío) ========== -->
-        <Grid Grid.Row="1" Margin="0,32,0,0">
+        <!-- ========== Mesas del bar (todo el espacio bajo el saludo) ========== -->
+        <Grid Grid.Row="1" Margin="0,24,0,0">
+
+            <!-- Cada mesa en una posición aleatoria, sin solaparse (Controls/RandomPanel.cs) -->
+            <ItemsControl ItemsSource="{Binding Mesas}" Focusable="False">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <controls:RandomPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <!-- Su DataContext es una Mesa -->
+                    <DataTemplate>
+                        <Button Style="{StaticResource TxMesaButton}"
+                                Command="{Binding DataContext.AbrirMesaCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                CommandParameter="{Binding}"
+                                AutomationProperties.Name="{Binding Numero, StringFormat='Mesa {0}'}">
+                            <Grid Width="110" Height="110">
+                                <Image Source="pack://application:,,,/Images/png/mesa-redonda-4_butacas.png"
+                                       Stretch="Uniform"
+                                       RenderOptions.BitmapScalingMode="HighQuality"/>
+                                <TextBlock Text="{Binding Numero}"
+                                           FontSize="24"
+                                           FontWeight="Bold"
+                                           Foreground="White"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect BlurRadius="6" ShadowDepth="1" Direction="270"
+                                                          Color="#000000" Opacity="0.6"/>
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                            </Grid>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- Cargando, sin mesas o error. Se oculta cuando StatusMessage es null -->
+            <TextBlock Text="{Binding StatusMessage}"
+                       FontSize="14"
+                       Foreground="{StaticResource TxMuted}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding StatusMessage}" Value="{x:Null}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
         </Grid>
     </Grid>
 </UserControl>
