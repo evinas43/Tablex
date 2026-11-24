@@ -37,5 +37,27 @@ namespace TableX.Services
 
             return await response.Content.ReadFromJsonAsync<List<UserInfo>>() ?? new List<UserInfo>();
         }
+
+        // DELETE api/users/{id} -> borra el usuario (necesita el token).
+        // Si la API responde con error (401, 403, 404, 500...) lanza HttpRequestException con su StatusCode.
+        public async Task DeleteAsync(int id)
+        {
+            var response = await _client.DeleteAsync($"api/users/{id}");
+
+            response.EnsureSuccessStatusCode();
+        }
+
+        // PUT api/users/{id} -> cambia nombre y rol, y devuelve el usuario actualizado (necesita el token).
+        // La contraseña no se envía, así que la API mantiene la actual.
+        // Si la API responde con error (400, 401, 403, 404, 409 nombre repetido...) lanza HttpRequestException con su StatusCode.
+        public async Task<UserInfo> UpdateAsync(int id, string username, string role)
+        {
+            var response = await _client.PutAsJsonAsync($"api/users/{id}", new { username, role });
+
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadFromJsonAsync<UserInfo>()
+                ?? new UserInfo { Id = id, Username = username, Role = role };
+        }
     }
 }

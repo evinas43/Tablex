@@ -24,5 +24,10 @@
             <views:UserListView/>
         </DataTemplate>
 
+        <!-- Panel de editar usuario: se muestra dentro de UserListView -->
+        <DataTemplate DataType="{x:Type vm:UserEditVM}">
+            <views:UserEditView/>
+        </DataTemplate>
+
     </Application.Resources>
 </Application>

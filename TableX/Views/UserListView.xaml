@@ -86,7 +86,23 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
+    <Grid>
+
+    <!-- Panel de editar: aparece cuando EditingUser tiene valor (se pinta con UserEditView) -->
+    <ContentControl Content="{Binding EditingUser}" Focusable="False"/>
+
+    <!-- Lista: se oculta mientras el panel de editar está abierto -->
     <Grid Margin="32">
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Setter Property="Visibility" Value="Collapsed"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding EditingUser}" Value="{x:Null}">
+                        <Setter Property="Visibility" Value="Visible"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -186,5 +202,7 @@
             </DataGrid>
             </DockPanel>
         </Border>
+    </Grid>
+
     </Grid>
 </UserControl>

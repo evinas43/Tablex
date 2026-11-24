@@ -100,12 +100,45 @@ namespace TableX.ViewModels
         // Cada fila pasa su UserInfo como CommandParameter
         public RelayCommand EditUserCommand { get; }
 
+        // Panel de edición abierto. null = se ve la tabla; con valor = se ve el panel
+        private UserEditVM? _editingUser;
+        public UserEditVM? EditingUser
+        {
+            get => _editingUser;
+            private set
+            {
+                _editingUser = value;
+                OnPropertyChanged();
+            }
+        }
+
         private void EditUser(UserInfo? user)
         {
             if (user == null)
                 return;
 
-            // TODO: abrir el formulario de edición (también tendrá la opción de eliminar)
+            EditingUser = new UserEditVM(user, _users, CloseEditor, OnUserSaved, OnUserDeleted);
+        }
+
+        private void CloseEditor() => EditingUser = null;
+
+        // El panel ya lo ha guardado en la API: se cambia la fila por el usuario nuevo y se vuelve a la lista.
+        // Se sustituye el objeto entero porque UserInfo no avisa a la tabla si cambian sus propiedades.
+        private void OnUserSaved(UserInfo oldUser, UserInfo updated)
+        {
+            var index = Users.IndexOf(oldUser);
+            if (index >= 0)
+                Users[index] = updated;
+
+            CloseEditor();
+        }
+
+        // El panel ya lo ha borrado en la API: se quita de la tabla y se vuelve a la lista
+        private void OnUserDeleted(UserInfo user)
+        {
+            Users.Remove(user);
+            StatusMessage = Users.Count == 0 ? "No hay usuarios" : null;
+            CloseEditor();
         }
     }
 }

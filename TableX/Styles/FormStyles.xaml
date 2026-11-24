@@ -1,0 +1,265 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:util="clr-namespace:TableX.Utilities">
+
+    <!-- Estilos de formularios: botones, campos de texto y desplegables.
+         Incluye NavBarStyles para tener los colores (TxOrange, TxInk, TxLine...) -->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Styles/NavBarStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
+
+    <!-- Título pequeño encima de un campo -->
+    <Style x:Key="TxFieldLabel" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource TxText}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Margin" Value="0,20,0,8"/>
+    </Style>
+
+    <!-- ========== Botones con icono ==========
+         El icono se pasa en Tag con un trazado de NavIcons:
+         <Button Tag="{x:Static util:NavIcons.Save}" Content="Guardar"/> -->
+
+    <!-- Botón principal: naranja -->
+    <Style x:Key="TxPrimaryButton" TargetType="Button">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="{StaticResource TxOrange}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TxOrange}"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource TxFocusVisual}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="10">
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                            <Viewbox Width="18" Height="18" Margin="0,0,10,0">
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Stroke="{TemplateBinding Foreground}"
+                                          Style="{StaticResource TxIconPath}"/>
+                                </Canvas>
+                            </Viewbox>
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Opacity" Value="0.9"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Bd" Property="Opacity" Value="0.45"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Botón secundario: blanco con borde -->
+    <Style x:Key="TxOutlineButton" TargetType="Button" BasedOn="{StaticResource TxPrimaryButton}">
+        <Setter Property="Foreground" Value="{StaticResource TxText}"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TxLine}"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource TxInk}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Botón "Volver": flecha naranja + texto, sin fondo -->
+    <Style x:Key="TxBackButton" TargetType="Button">
+        <Setter Property="Foreground" Value="{StaticResource TxInk}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource TxFocusVisual}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="8"
+                            Padding="8,6,12,6">
+                        <StackPanel Orientation="Horizontal">
+                            <Viewbox Width="20" Height="20" Margin="0,0,12,0">
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="{Binding Source={x:Static util:NavIcons.ArrowLeft}}"
+                                          Stroke="{StaticResource TxOrange}"
+                                          Style="{StaticResource TxIconPath}"/>
+                                </Canvas>
+                            </Viewbox>
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource TxHover}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ========== Campo de texto ========== -->
+
+    <Style x:Key="TxTextBox" TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource TxInk}"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TxLine}"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Padding" Value="14,0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="CaretBrush" Value="{StaticResource TxInk}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="10">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                      Margin="{TemplateBinding Padding}"
+                                      VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource TxMuted}"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource TxOrange}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ========== Desplegable ==========
+         Icono a la izquierda en Tag (trazado de NavIcons) y flecha a la derecha.
+         Usa ItemTemplate (no DisplayMemberPath) para que el texto elegido se vea igual que en la lista. -->
+
+    <Style x:Key="TxComboBoxItem" TargetType="ComboBoxItem">
+        <Setter Property="Foreground" Value="{StaticResource TxInk}"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <Border x:Name="Bd"
+                            Background="Transparent"
+                            CornerRadius="6"
+                            Padding="12,10">
+                        <ContentPresenter/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="{StaticResource TxHover}"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="{StaticResource TxOrange}"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TxComboBox" TargetType="ComboBox">
+        <Setter Property="Foreground" Value="{StaticResource TxInk}"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ItemContainerStyle" Value="{StaticResource TxComboBoxItem}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource TxFocusVisual}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <!-- Toda la caja es clicable y abre/cierra la lista -->
+                        <ToggleButton Focusable="False"
+                                      ClickMode="Press"
+                                      IsChecked="{Binding IsDropDownOpen, Mode=TwoWay,
+                                                  RelativeSource={RelativeSource TemplatedParent}}">
+                            <ToggleButton.Template>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Border x:Name="Bd"
+                                            Background="White"
+                                            BorderBrush="{StaticResource TxLine}"
+                                            BorderThickness="1"
+                                            CornerRadius="10"/>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource TxMuted}"/>
+                                        </Trigger>
+                                        <Trigger Property="IsChecked" Value="True">
+                                            <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource TxOrange}"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </ToggleButton.Template>
+                        </ToggleButton>
+
+                        <!-- Icono + elemento elegido + flecha (no reciben clics: pasan al ToggleButton) -->
+                        <DockPanel Margin="16,0" IsHitTestVisible="False">
+                            <Viewbox DockPanel.Dock="Left" Width="20" Height="20" Margin="0,0,14,0">
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Stroke="{StaticResource TxText}"
+                                          Style="{StaticResource TxIconPath}"/>
+                                </Canvas>
+                            </Viewbox>
+                            <Viewbox DockPanel.Dock="Right" Width="18" Height="18">
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="{Binding Source={x:Static util:NavIcons.ChevronDown}}"
+                                          Stroke="{StaticResource TxInk}"
+                                          Style="{StaticResource TxIconPath}"/>
+                                </Canvas>
+                            </Viewbox>
+                            <ContentPresenter Content="{TemplateBinding SelectionBoxItem}"
+                                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                              VerticalAlignment="Center"/>
+                        </DockPanel>
+
+                        <!-- Lista desplegada -->
+                        <Popup IsOpen="{TemplateBinding IsDropDownOpen}"
+                               Placement="Bottom"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Fade">
+                            <Border MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}"
+                                    Background="White"
+                                    BorderBrush="{StaticResource TxLine}"
+                                    BorderThickness="1"
+                                    CornerRadius="10"
+                                    Padding="6"
+                                    Margin="0,6,0,0">
+                                <ScrollViewer MaxHeight="240" VerticalScrollBarVisibility="Auto">
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

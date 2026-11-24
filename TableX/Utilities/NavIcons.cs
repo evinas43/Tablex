@@ -29,5 +29,32 @@
         // Luna (saludo de noche en Inicio)
         public const string Moon =
             "M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z";
+
+        // ---------- Panel de editar usuario ----------
+
+        // Flecha a la izquierda (Volver)
+        public const string ArrowLeft =
+            "M12 19l-7-7 7-7 M19 12H5";
+
+        // Silueta de una persona (avatar)
+        public const string User =
+            "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2 M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z";
+
+        // Escudo (rol)
+        public const string Shield =
+            "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z";
+
+        // Disquete (Guardar)
+        public const string Save =
+            "M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z " +
+            "M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7 M7 3v4a1 1 0 0 0 1 1h7";
+
+        // Papelera (Eliminar)
+        public const string Trash =
+            "M3 6h18 M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6 M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2 M10 11v6 M14 11v6";
+
+        // Flecha hacia abajo (desplegables)
+        public const string ChevronDown =
+            "M6 9l6 6 6-6";
     }
     }
